@@ -1,4 +1,4 @@
-import Home from "./templates/home";
+import Home from "./templates/home.tsx";
 
 function App() {
   return (

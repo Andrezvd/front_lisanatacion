@@ -1,0 +1,45 @@
+.footer {
+    background-color: #003366;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.text {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.contact {
+    margin-bottom: 20px;
+}
+
+.social {
+    margin-bottom: 20px;
+}
+
+.link {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    margin-top: 20px;
+}

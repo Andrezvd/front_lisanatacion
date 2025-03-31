@@ -1,6 +1,14 @@
+import NavBar from "../components/navBar";
+import Footer from "../components/footer";
+
 function Home() {
-    return <h1>Bienvenido a mi aplicación</h1>;
-  }
-  
-  export default Home;
-  
+  return (
+    <>
+      <NavBar/>
+      <div className="espacioGrande"></div>
+      <Footer/>
+    </>
+  );
+}
+
+export default Home;

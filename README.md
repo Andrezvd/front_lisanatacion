@@ -1,3 +1,18 @@
+# DESPUÉS DE CLONAR EL REPOSITORIO
+-> npm install
+para instalar las dependencias 
+-> npm install react-router-dom
+-> npm install -D @types/react-router-dom
+# Después de instalar las ependencias
+-> npm run dev para levantar localmente
+# EL FORNT SERÁ HECH CON VITE + REACT USANDO TYPE SCRIPT
+
+
+
+
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

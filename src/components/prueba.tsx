@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import api from "../services/api";
 
-function App() {
+function Prueba() {
   useEffect(() => {
     api.get("/api/v1/test") 
       .then(response => console.log(response.data))
@@ -11,4 +11,4 @@ function App() {
   return <h1>¡Conectado al backend! 🎉</h1>;
 }
 
-export default App;
+export default Prueba;
