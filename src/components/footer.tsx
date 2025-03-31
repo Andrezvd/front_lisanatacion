@@ -11,13 +11,13 @@ const Footer: React.FC = () => {
         </p>
         <div className="contact">
           <h4>Contacto</h4>
-          <p>Email: info@swimleague-santander.com</p>
-          <p>Teléfono: +34 123 456 789</p>
-          <p>Dirección: Calle del Agua, 123, Santander, España</p>
+          <p>Email: ligasana@gmail.com</p>
+          <p>Teléfono: 318 3134245</p>
+          <p>Dirección: Piscinas Olimpicas, Bucaramanga Colombia</p>
         </div>
         <div className="social">
           <h4>Síguenos</h4>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="link">
+          <a href="https://www.facebook.com/lisanatacion.oficial/" target="_blank" rel="noopener noreferrer" className="link">
             Facebook
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="link">

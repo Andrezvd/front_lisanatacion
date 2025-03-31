@@ -2,33 +2,85 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #003366;
-  padding: 15px 20px;
+  background-color: rgba(22, 27, 29, 0.9);
+  padding: 7px 15px;
+  max-width: 100%;
+  margin: 0 20px;
+  border-radius: 10px;
+  top: 20px;
 }
+
+.contenedor-navbar {
+  position: sticky;
+  top: 20px;
+  width: 100%;
+  z-index: 1000;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.navbar-logo-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Centra el logo */
+}
+
+.navbar-logo-center img {
+  height: 50px; /* Ajusta el tamaño según tu logo */
+  width: auto;
+}
+
 
 .navbar-logo a {
-  color: white;
+  color: rgb(255, 255, 255);
+  font-size: 1.179rem;
+  font-weight: 700;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  text-align: center;
   text-decoration: none;
-  font-size: 1.5rem;
+  padding: 10px;
 }
 
-.navbar-links {
+.navbar-links{
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 
 .navbar-links li {
-  position: relative;
+  padding: 8px 0px;
 }
 
-.navbar-links a, .dropbtn {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 10px;
-  cursor: pointer;
+.navbar-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
 }
+
+
+
+.navbar-links a, .dropbtn {
+  color: rgb(255, 255, 255);
+  font-size: 1.179rem;
+  font-weight: 700;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.dropbtn:hover {
+  background-color: rgba(243, 16, 16, 0.9);
+  border-radius: 5px;
+}
+
+.dropbtn{
+  background-color: rgba(253, 72, 72, 0.9);
+  border-radius: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
 
 .dropdown-content {
   display: none;
@@ -57,9 +109,6 @@
   text-decoration: none;
 }
 
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
 
 .dropdown:hover .dropdown-content {
   display: block;

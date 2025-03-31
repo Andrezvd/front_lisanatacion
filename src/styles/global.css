@@ -3,7 +3,14 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+
 }
+
+html, body {
+  background-color: rgba(252, 252, 252, 0.9);
+}
+
+
   
 .espacioGrande {
   height: 100vh;
