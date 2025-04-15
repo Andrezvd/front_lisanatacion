@@ -3,6 +3,7 @@
 para instalar las dependencias 
 -> npm install react-router-dom
 -> npm install -D @types/react-router-dom
+-> npm install react-icons
 # Después de instalar las ependencias
 -> npm run dev para levantar localmente
 # EL FORNT SERÁ HECH CON VITE + REACT USANDO TYPE SCRIPT
