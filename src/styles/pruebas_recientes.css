@@ -1,0 +1,65 @@
+.contenedor-pruebas {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #f2ff00, #27ae60);
+    padding: 0px 50px;
+    max-width: 100%;
+    height: 15vh;
+    overflow-x: auto;
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
+  
+ .cards-container {
+  display: flex;
+  gap: 20px;
+}
+
+.card-prueba {
+  background-color: rgb(255, 255, 0);
+  border-radius: 12px;
+  padding: 15px 20px;
+  width: 100%;
+  height: 13vh;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: left;
+  cursor: pointer;
+}
+
+.card-prueba .fecha {
+  font-weight: bold;
+  color: #007b0c;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+}
+
+.card-prueba .titulo {
+  font-size: 0.7rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.card-prueba .piscina {
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.ver-todas {
+  margin-left: 35.81%;
+}
+
+.btn-ver-todas {
+  background-color: #ffffff;
+  color: #007b0c;
+  border: 2px solid #007b0c;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.btn-ver-todas:hover {
+  background-color: #007b0c;
+  color: white;
+}

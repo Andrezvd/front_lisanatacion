@@ -7,11 +7,17 @@
 }
 
 html, body {
-  background-color: rgba(1, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 
   
 .espacioGrande {
   height: 100vh;
+  background-color: #27ae60;
+}
+
+.lineaSeparadora{
+  height: 1px;
+  background-color: white;
 }
