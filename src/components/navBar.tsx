@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/navBar.css";
 import logo from "../assets/logo/Logogpt.png";
+import LoginPanel from "./loginPanel/loginPanel";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaSignInAlt, FaCalendarAlt, FaSwimmer } from "react-icons/fa";
 import { TbTournament } from "react-icons/tb";
@@ -9,6 +11,8 @@ import { GiTeacher } from "react-icons/gi";
 import { GrGallery } from "react-icons/gr";
 
 const NavBar: React.FC = () => {
+  const [loginOpen, setLoginOpen] = useState(false);
+
   return (
     <div className="contenedor-navbar">
       <nav className="navbar">
@@ -61,12 +65,13 @@ const NavBar: React.FC = () => {
           <li><Link to="/galeria">Galería <span className="icono_drowdown"><GrGallery /></span></Link></li>
 
           <li className="dropdown">
-            <span className="dropbtn">
+            <span className="dropbtn" onClick={() => setLoginOpen(true)}>
               Iniciar sesión <span className="icono_drowdown"><FaSignInAlt /></span>
             </span>
           </li>
         </ul>
       </nav>
+      <LoginPanel isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
     </div>
   );
 };
