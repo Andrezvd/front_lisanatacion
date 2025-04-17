@@ -73,7 +73,10 @@
   }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1450px) {
+  .galeriaOpcion{
+    display: none;
+  }
   .navbar-links {
     gap: 1.9rem; /* Reduce el espacio entre los enlaces */
   }
