@@ -35,17 +35,18 @@
   font-weight: bold;
   color: #02400d;
   margin-bottom: 8px;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
 }
 
 .card-prueba .titulo {
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   color: #2c3e50;
   margin-bottom: 5px;
 }
 
 .card-prueba .piscina {
-  font-size: 0.85rem;
+  font-size: 0.58rem;
+  font-weight: bold;  ;
   color: #4a4a4a;
 }
 
@@ -109,7 +110,7 @@
     justify-content: center; /* <-- centra el grid */
     overflow-x: hidden;
     width: 100%;
-    height: 54vh;
+
   }
   
 
@@ -133,7 +134,11 @@
 }
 
 /* 📱 Para pantallas MUY pequeñas, tipo móviles */
-@media (max-width: 480px) {
+@media (max-width: 680px) {
+
+  .cards-container{
+    height: 54vh;
+  }
   .card-prueba .fecha,
   .card-prueba .titulo,
   .card-prueba .piscina {

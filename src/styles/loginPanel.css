@@ -12,54 +12,152 @@
   }
   
   .modal-container {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 350px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    border-radius: 12px;
+    overflow: hidden;
     position: relative;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   }
   
-  .modal-container h2 {
-    margin-top: 0;
+  .modal-left {
+    background-color: #004d40;
+    color: white;
+    padding: 2rem;
+    width: 50%;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .modal-left h3 {
+    margin-bottom: 1rem;
+  }
+  
+  .modal-left p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .auth-link {
+    display: inline-block;
+    background-color: #26a69a;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+  
+  .auth-link:hover {
+    background-color: #1de9b6;
+  }
+  
+  .modal-right {
+    width: 50%;
+    padding: 2rem;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .modal-right h2 {
     margin-bottom: 1.5rem;
+    color: #004d40;
     text-align: center;
   }
   
-  .modal-container form {
+  .modal-right form {
     display: flex;
     flex-direction: column;
   }
   
-  .modal-container label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+  .modal-right label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #333;
   }
   
-  .modal-container input {
+  .modal-right input {
     margin-bottom: 1rem;
-    padding: 0.5rem;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
     font-size: 1rem;
   }
   
-  .modal-container button[type="submit"] {
-    background-color: #27ae60;
+  .modal-right button[type="submit"] {
+    background-color: #26a69a;
     color: white;
-    padding: 0.6rem;
+    padding: 0.7rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: bold;
+    font-size: 1rem;
     cursor: pointer;
+    margin-top: 0.5rem;
+  }
+  
+  .modal-right button[type="submit"]:hover {
+    background-color: #1de9b6;
+  }
+  
+  .forgot-password {
+    background: none;
+    border: none;
+    color: #00796b;
+    text-align: left;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
   }
   
   .close-button {
     position: absolute;
-    top: 0.5rem;
-    right: 0.7rem;
+    top: 0.6rem;
+    right: 0.8rem;
     background: none;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: #555;
     cursor: pointer;
-    color: #333;
   }
   
+  /* --- Responsive Layout --- */
+@media screen and (max-width: 950px) {
+  .modal-container {
+    flex-direction: column;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 1.5rem;
+  }
+
+  .modal-left, .modal-right {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .modal-left {
+    margin: 20px 0px;
+    padding: 20px;
+    border-radius: 12px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .modal-right form {
+    width: 100%;
+  }
+
+  .modal-image {
+    max-width: 140px;
+  }
+
+  .close-button {
+    top: 1rem;
+    right: 1rem;
+  }
+}

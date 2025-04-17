@@ -45,7 +45,7 @@
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 1.6rem;
+  gap: 1.4rem;
 }
 
 .navbar-links li {
@@ -69,7 +69,7 @@
 
 @media (max-width: 1500px) {
   .navbar-links {
-    gap: 1.4rem; /* Reduce el espacio entre los enlaces */
+    gap: 1.2rem; /* Reduce el espacio entre los enlaces */
   }
 }
 
@@ -78,13 +78,13 @@
     display: none;
   }
   .navbar-links {
-    gap: 1.9rem; /* Reduce el espacio entre los enlaces */
+    gap: 1.3rem; /* Reduce el espacio entre los enlaces */
   }
 }
 
 @media (max-width: 1368px){
   .navbar-links {
-    gap: 1rem; /* Reduce el espacio entre los enlaces */
+    gap: 0.7rem; /* Reduce el espacio entre los enlaces */
   }
 }
 
@@ -101,7 +101,7 @@
     display: none; /* Reduce el espacio entre los enlaces */
   }
   .navbar-links {
-    gap: 2.7rem; /* Reduce el espacio entre los enlaces */
+    gap: 2.2rem; /* Reduce el espacio entre los enlaces */
   }
 }
 
