@@ -68,11 +68,14 @@
 /* MANEJO RESPONSIVO DE LA NAVBAR*/
 
 @media (max-width: 1500px) {
-  .galeriaOpcion {
-    display: none; /* Oculta el menú de opciones en pantallas pequeñas */
-  }
   .navbar-links {
-    gap: 1.6rem; /* Reduce el espacio entre los enlaces */
+    gap: 1.4rem; /* Reduce el espacio entre los enlaces */
+  }
+}
+
+@media (max-width: 1400px) {
+  .navbar-links {
+    gap: 1.9rem; /* Reduce el espacio entre los enlaces */
   }
 }
 
