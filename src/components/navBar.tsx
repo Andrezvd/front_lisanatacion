@@ -13,6 +13,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 const NavBar: React.FC = () => {
   const [loginOpen, setLoginOpen] = useState(false);
+  const userRole = localStorage.getItem("userRole");
+  const userName = localStorage.getItem("userName");
 
   return (
     <div className="contenedor-navbar">
@@ -61,7 +63,7 @@ const NavBar: React.FC = () => {
           <li className="dropdown masOpcion">
             <div className="dropdown-wrapper">
               <Link to="/buscar">
-                Mas <span className="icono_drowdown"><GiHamburgerMenu/></span>
+                Mas <span className="icono_drowdown"><GiHamburgerMenu /></span>
               </Link>
               <ul className="dropdown-content">
                 <div className="opcionTransparente"></div>
@@ -85,11 +87,28 @@ const NavBar: React.FC = () => {
           <li className="cursosOpcion"><Link to="/services">Cursos <span className="icono_drowdown"><GiTeacher /></span></Link></li>
           <li className="galeriaOpcion"><Link to="/galeria">Galería <span className="icono_drowdown"><GrGallery /></span></Link></li>
 
-          <li className="dropdown">
-            <span className="dropbtn" onClick={() => setLoginOpen(true)}>
-              Iniciar sesión <span className="icono_drowdown"><FaSignInAlt /></span>
-            </span>
-          </li>
+          {userRole === "admin" ? (
+            <li className="dropdown">
+                <div className="dropdown-wrapper">
+                  <Link to="/buscar">
+                  {userName} <span className="icono_drowdown"><GiHamburgerMenu /></span>
+                  </Link>
+                  <ul className="dropdown-content">
+                    <div className="opcionTransparente"></div>
+                    <div className="fondoOpcionesDesplegables opcionesDesplegadas">
+                      <li><Link to="/admin">Usuarios y Noticias</Link></li>
+                      <li><Link to="/panelTorneos">Panel de torneos</Link></li>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+          ) : (
+            <li className="dropdown">
+              <span className="dropbtn" onClick={() => setLoginOpen(true)}>
+                Iniciar sesión <span className="icono_drowdown"><FaSignInAlt /></span>
+              </span>
+            </li>
+          )}
         </ul>
       </nav>
       <LoginPanel isOpen={loginOpen} onClose={() => setLoginOpen(false)} />

@@ -1,14 +1,17 @@
-import { useEffect } from "react";
-import api from "../services/api";
+import React from "react";
 
-function Prueba() {
-  useEffect(() => {
-    api.get("/api/v1/test") 
-      .then(response => console.log(response.data))
-      .catch(error => console.error("Error:", error));
-  }, []);
+const LogoutButton: React.FC = () => {
+  const handleClick = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userRole");
+    window.location.href = "/";
+  };
 
-  return <h1>¡Conectado al backend! 🎉</h1>;
-}
+  return (
+    <button onClick={handleClick} style={{ position: "fixed", top: 200, right: 10 }}>
+      Logout
+    </button>
+  );
+};
 
-export default Prueba;
+export default LogoutButton;

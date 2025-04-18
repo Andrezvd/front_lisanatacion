@@ -295,7 +295,7 @@
   position: absolute;
   top: 70%;
   left: auto;
-  min-width: 17%;
+  max-width: fit-content !important;
   z-index: 1000;
   flex-direction: column;
   opacity: 0;
@@ -317,7 +317,7 @@
 
 .dropdown-content li {
   list-style: none;
-  padding: 10px 10px;
+  padding: 0;
   text-align: left;
   white-space: nowrap;
   margin: 0;
@@ -354,3 +354,6 @@
   pointer-events: auto;
   display: flex;
 }
+
+/*OPCIONES DEPENDIENDO DEL ROL DEL USUARIO*/
+
