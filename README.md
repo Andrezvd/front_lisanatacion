@@ -1,11 +1,13 @@
 # DESPUÉS DE CLONAR EL REPOSITORIO
--> npm install
+
+1. Instalar las dependencias con **`pnpm`**:
+-> pnpm install
 para instalar las dependencias 
--> npm install react-router-dom
--> npm install -D @types/react-router-dom
--> npm install react-icons
+-> pnpm install react-router-dom
+-> pnpm install -D @types/react-router-dom
+-> pnpm install react-icons
 # Después de instalar las ependencias
--> npm run dev para levantar localmente
+-> pnpm run dev para levantar localmente
 # EL FORNT SERÁ HECH CON VITE + REACT USANDO TYPE SCRIPT
 
 
