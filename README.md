@@ -6,6 +6,8 @@ para instalar las dependencias
 -> pnpm install react-router-dom
 -> pnpm install -D @types/react-router-dom
 -> pnpm install react-icons
+-> pnpm add @fortawesome/react-fontawesome @fortawesome free-brands-svg-icons @fortawesome/fontawesome-svg-core
+
 # Después de instalar las ependencias
 -> pnpm run dev para levantar localmente
 # EL FORNT SERÁ HECH CON VITE + REACT USANDO TYPE SCRIPT
