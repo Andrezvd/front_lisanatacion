@@ -19,6 +19,8 @@
   }
   
   .footer-logo {
+    background-color: wheat;
+    border-radius: 20px;
     max-width: 100px;
     margin-bottom: 15px;
   }
