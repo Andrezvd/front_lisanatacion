@@ -84,8 +84,6 @@ const NavBar: React.FC = () => {
           <li className="carrerasOpcion"><Link to="/carreras">Pruebas <span className="icono_drowdown carrerasOpcion"><FaSwimmer /></span></Link></li>
           <li className="torneosOpcion"><Link to="/about">Torneos <span className="icono_drowdown"><TbTournament /></span></Link></li>
           <li className="convocatoriaOpcion"><Link to="/services">Convocatorias <span className="icono_drowdown"><IoMdMegaphone /></span></Link></li>
-          <li className="cursosOpcion"><Link to="/services">Cursos <span className="icono_drowdown"><GiTeacher /></span></Link></li>
-          <li className="galeriaOpcion"><Link to="/galeria">Galería <span className="icono_drowdown"><GrGallery /></span></Link></li>
 
           {userRole === "admin" ? (
             <li className="dropdown">
@@ -109,7 +107,10 @@ const NavBar: React.FC = () => {
               </span>
             </li>
           )}
+          <li className="cursosOpcion"><Link to="/services">Cursos <span className="icono_drowdown"><GiTeacher /></span></Link></li>
+          <li className="galeriaOpcion"><Link to="/galeria">Galería <span className="icono_drowdown"><GrGallery /></span></Link></li>
         </ul>
+
       </nav>
       <LoginPanel isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
     </div>

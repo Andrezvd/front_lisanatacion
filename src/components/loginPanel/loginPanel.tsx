@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/loginPanel.css";
+import ManejarLogin from "./manejarLogin";
 
 interface LoginPanelProps {
   isOpen: boolean;
@@ -7,7 +8,35 @@ interface LoginPanelProps {
 }
 
 const LoginPanel: React.FC<LoginPanelProps> = ({ isOpen, onClose }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [mensaje, setMensaje] = useState<string | null>(null);
+
   if (!isOpen) return null;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setMensaje(null);
+
+    try {
+      // Llamar a la función ManejarLogin
+      const { access_token, usuario } = await ManejarLogin(email, password);
+      
+      // Guardar los datos del usuario y token en localStorage
+      localStorage.setItem("access_token", access_token);
+      localStorage.setItem("userName", usuario.nombre);
+      localStorage.setItem("userRole", usuario.rol);
+      localStorage.setItem("userEmail", usuario.email);
+      localStorage.setItem("userInfo", JSON.stringify(usuario)); // Guardar el usuario completo
+
+      // Mensaje de éxito
+      setMensaje("✅ Sesión iniciada correctamente.");
+      onClose(); // Cerrar el modal solo cuando la sesión sea exitosa
+    } catch (error: any) {
+      // Mostrar error
+      setMensaje("❌ Error al iniciar sesión: " + error.message);
+    }
+  };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -31,15 +60,29 @@ const LoginPanel: React.FC<LoginPanelProps> = ({ isOpen, onClose }) => {
 
         <div className="modal-right">
           <h2>Iniciar Sesión</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <label htmlFor="email">Correo Electrónico:</label>
-            <input type="email" id="email" required />
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
 
             <label htmlFor="password">Contraseña:</label>
-            <input type="password" id="password" required />
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
 
             <button type="submit">Ingresar</button>
             <button type="button" className="forgot-password">¿Olvidaste tu contraseña?</button>
+
+            {mensaje && <p className="mensaje-login">{mensaje}</p>}
           </form>
         </div>
 
