@@ -10,6 +10,7 @@ import { IoMdMegaphone } from "react-icons/io";
 import { GiTeacher } from "react-icons/gi";
 import { GrGallery } from "react-icons/gr";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { FaUser } from "react-icons/fa6";
 
 const NavBar: React.FC = () => {
   const [loginOpen, setLoginOpen] = useState(false);
@@ -89,13 +90,14 @@ const NavBar: React.FC = () => {
             <li className="dropdown">
                 <div className="dropdown-wrapper">
                   <Link to="/buscar">
-                  {userName} <span className="icono_drowdown"><GiHamburgerMenu /></span>
+                  {userName} <span className="icono_drowdown"><FaUser /></span>
                   </Link>
                   <ul className="dropdown-content">
                     <div className="opcionTransparente"></div>
                     <div className="fondoOpcionesDesplegables opcionesDesplegadas">
-                      <li><Link to="/admin">Usuarios y Noticias</Link></li>
+                      <li><Link to="/admin">Gestionar Nadadores</Link></li>
                       <li><Link to="/panelTorneos">Panel de torneos</Link></li>
+                      <li><Link to="/logout">Log out</Link></li>
                     </div>
                   </ul>
                 </div>
