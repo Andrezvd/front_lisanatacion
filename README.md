@@ -4,6 +4,7 @@
 -> pnpm install
 para instalar las dependencias 
 -> pnpm install react-router-dom
+-> pnpm install jwt-decode
 -> pnpm install -D @types/react-router-dom
 -> pnpm install react-icons
 -> pnpm add @fortawesome/react-fontawesome @fortawesome free-brands-svg-icons @fortawesome/fontawesome-svg-core

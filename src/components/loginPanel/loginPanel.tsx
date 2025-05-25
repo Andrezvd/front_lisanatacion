@@ -1,10 +1,19 @@
 import React, { useState } from "react";
+import { jwtDecode } from "jwt-decode";
 import "../../styles/loginPanel.css";
-import ManejarLogin from "./manejarLogin";
+import manejarLogin from "./manejarLogin";
 
 interface LoginPanelProps {
   isOpen: boolean;
   onClose: () => void;
+}
+
+interface JwtPayload {
+  user_id: number;
+  nombre: string;
+  email: string;
+  rol: string;
+
 }
 
 const LoginPanel: React.FC<LoginPanelProps> = ({ isOpen, onClose }) => {
@@ -19,21 +28,20 @@ const LoginPanel: React.FC<LoginPanelProps> = ({ isOpen, onClose }) => {
     setMensaje(null);
 
     try {
-      // Llamar a la función ManejarLogin
-      const { access_token, usuario } = await ManejarLogin(email, password);
-      
-      // Guardar los datos del usuario y token en localStorage
-      localStorage.setItem("access_token", access_token);
+      const token = await manejarLogin(email, password);
+
+      // Decodificar el JWT para obtener datos del usuario
+      const usuario = jwtDecode<JwtPayload>(token);
+
+      // Guardar token y datos de usuario en localStorage
+      localStorage.setItem("access_token", token);
+      localStorage.setItem("user_id", usuario.user_id.toString());
       localStorage.setItem("userName", usuario.nombre);
       localStorage.setItem("userRole", usuario.rol);
-      localStorage.setItem("userEmail", usuario.email);
-      localStorage.setItem("userInfo", JSON.stringify(usuario)); // Guardar el usuario completo
 
-      // Mensaje de éxito
       setMensaje("✅ Sesión iniciada correctamente.");
-      onClose(); // Cerrar el modal solo cuando la sesión sea exitosa
+      onClose(); // cerrar modal después de login exitoso
     } catch (error: any) {
-      // Mostrar error
       setMensaje("❌ Error al iniciar sesión: " + error.message);
     }
   };

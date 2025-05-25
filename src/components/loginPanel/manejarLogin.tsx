@@ -1,26 +1,12 @@
 import api from "../../services/api";
 
-interface Usuario {
-  id: number;
-  nombre: string;
-  apellido: string;
-  fecha_asig: string;
-  email: string;
-  rol: string;
-  contacto: string | null;
-  edad: number | null;
-}
-
 interface LoginResponse {
   access_token: string;
   token_type: string;
-  usuario: Usuario;
+  // el backend no devuelve usuario explícito aquí
 }
 
-const manejarLogin = async (
-  email: string,
-  password: string
-): Promise<LoginResponse> => {
+const manejarLogin = async (email: string, password: string): Promise<string> => {
   try {
     const response = await api.post<LoginResponse>(
       "/login",
@@ -39,15 +25,12 @@ const manejarLogin = async (
       }
     );
 
-    const { access_token, usuario } = response.data;
+    const { access_token } = response.data;
 
-    // Guardar en localStorage
+    // Guardar solo el token en localStorage
     localStorage.setItem("access_token", access_token);
-    localStorage.setItem("userName", usuario.nombre);
-    localStorage.setItem("userRole", usuario.rol);
-    localStorage.setItem("userEmail", usuario.email);
 
-    return response.data;
+    return access_token;
 
   } catch (error) {
     console.error("❌ Error al obtener el token:", error);
