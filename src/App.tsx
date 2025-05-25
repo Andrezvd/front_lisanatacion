@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./templates/home";
 import AdminPanel from "./templates/adminPanel";
 import ProtectedRoute from "./router/protectedRoutes";
+import TrainersPanel from "./templates/trainersPanel"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           </ProtectedRoute>
         }
       />
+      <Route path="/trainersPanel" element={<TrainersPanel/>} />
     </Routes>
   );
 }

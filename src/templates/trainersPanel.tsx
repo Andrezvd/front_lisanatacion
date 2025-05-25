@@ -1,31 +1,39 @@
-import React from "react";
-import "../styles/adminPanel.css";
+import React, { useState } from "react";
+import "../styles/trainersPanel.css";
 import NavBar from "../components/navBar";
 import Footer from "../components/footer";
-import Prueba from "../components/prueba"
+import Prueba from "../components/prueba";
+import CrearCursoModal from "../components/crearCursoModal/crearCursoModal"; // Importa tu modal
 
-const AdminPanel: React.FC = () => {
+const TrainerPanel: React.FC = () => {
+  const [panelOpen, setPanelOpen] = useState(false); // estado para abrir/cerrar modal
+
   return (
     <>
       <NavBar />
-    <div className="admin-panel-container">
-      <h1 className="admin-title">Liga Santandereana de Natación</h1>
-      <p className="admin-subtitle">Bienvenido, aquí puedes gestionar todo lo relacionado con el sistema.</p>
+      <div className="trainers-panel-container">
+        <h1 className="trainers-title">Liga Santandereana de Natación</h1>
+        <p className="trainers-subtitle">
+          Bienvenido, aquí puedes gestionar todo lo relacionado con el sistema.
+        </p>
 
-      <div className="admin-options">
-        <button>Editar noticia Principal</button>
-        <button>Crear cuenta de Entrenador</button>
-        <button>Crear cuenta de Club</button>
-        <button>Gestionar Deportistas</button>
-        <button>Gestionar Entrenadores</button>
-        <button>Gestionar Clubes</button>
-        <button>Gestionar Torneo</button>
+        <div className="trainer-options">
+          <button className="trainer-button" onClick={() => setPanelOpen(true)}>
+            Crear Curso 
+          </button>
+          <button className="trainer-button"> Solicitar nuevo nadador</button>
+          <button className="trainer-button"> Solicitar cambio de datos</button>
+          <button className="trainer-button"> Agregar estudiante</button>
+        </div>
       </div>
-    </div>
-    <Prueba />
-    <Footer />
+
+      {/* Renderiza el modal solo si está abierto */}
+      {panelOpen && <CrearCursoModal onClose={() => setPanelOpen(false)} />}
+
+      <Prueba />
+      <Footer />
     </>
   );
 };
 
-export default AdminPanel;
+export default TrainerPanel;
