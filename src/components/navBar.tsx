@@ -115,7 +115,7 @@ const NavBar: React.FC = () => {
               </span>
             </li>
           )}
-          <li className="cursosOpcion"><Link to="/services">Cursos <span className="icono_drowdown"><GiTeacher /></span></Link></li>
+          <li className="cursosOpcion"><Link to="/CursosPanel">Cursos <span className="icono_drowdown"><GiTeacher /></span></Link></li>
           <li className="galeriaOpcion"><Link to="/galeria">Galería <span className="icono_drowdown"><GrGallery /></span></Link></li>
         </ul>
 
