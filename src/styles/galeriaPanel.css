@@ -1,0 +1,186 @@
+.galeria-contenedor {
+  background-color: #ffffff;
+  color: #222222;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.galeria-titulo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.galeria-subtitulo {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.galeria-subseccion h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.galeria-item, .video-item, .historia-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.galeria-item:hover, .video-item:hover, .historia-card:hover {
+  transform: translateY(-5px);
+}
+
+.galeria-item img,
+.historia-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.video-item iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  border: none;
+  display: block;
+}
+
+
+.galeria-grid,
+.video-grid,
+.historia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.historia-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Carrusel */
+.carrusel-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.carrusel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.carrusel::-webkit-scrollbar {
+  display: none;
+}
+
+.carrusel-btn {
+  background-color: #222;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.ver-mas-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.ver-mas-btn {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.ver-mas-btn:hover {
+  background-color: #003d80;
+}
+/* Carrusel de highlights */
+.highlight-item {
+  min-width: 250px;
+  flex: 0 0 auto;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.highlight-item:hover {
+  transform: translateY(-5px);
+}
+
+.highlight-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Flechas específicas del carrusel de highlights */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.3rem 0.7rem;
+  z-index: 10;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: #eee;
+}
+
+.carousel-arrow.left {
+  left: 0;
+}
+
+.carousel-arrow.right {
+  right: 0;
+}
+
+/* "Ver más" al final del carrusel */
+.ver-mas-destacado {
+  min-width: 250px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #0077cc;
+  cursor: pointer;
+  padding: 1rem;
+  border: 2px dashed #0077cc;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.ver-mas-destacado:hover {
+  background-color: #e6f3ff;
+}
