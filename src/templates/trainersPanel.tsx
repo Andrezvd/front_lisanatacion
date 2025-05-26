@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../styles/trainersPanel.css";
 import NavBar from "../components/navBar";
 import Footer from "../components/footer";
-import Prueba from "../components/prueba";
 import CrearCursoModal from "../components/crearCursoModal/crearCursoModal"; // Importa tu modal
 
 const TrainerPanel: React.FC = () => {
@@ -30,7 +29,6 @@ const TrainerPanel: React.FC = () => {
       {/* Renderiza el modal solo si está abierto */}
       {panelOpen && <CrearCursoModal onClose={() => setPanelOpen(false)} />}
 
-      <Prueba />
       <Footer />
     </>
   );

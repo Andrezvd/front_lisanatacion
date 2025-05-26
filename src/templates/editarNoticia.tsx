@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import NavBar from "../components/navBar";
 import Footer from "../components/footer";
-import Prueba from "../components/prueba";
 import "../styles/editarNoticia.css"
 import Patrocinadores from "../components/patrocinadoresOficiales/patrocinadoresOficiales";
 
@@ -35,7 +34,6 @@ const EditarNoticia = () => {
         <button type="submit">Guardar cambios</button>
       </form>
     </div>
-    <Prueba/>
     <Patrocinadores/>
     <Footer/>
     </>

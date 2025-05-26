@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/adminPanel.css";
 import NavBar from "../components/navBar";
 import Footer from "../components/footer";
-import Prueba from "../components/prueba";
 import Patrocinadores from "../components/patrocinadoresOficiales/patrocinadoresOficiales";
 
 // Importación de íconos
@@ -43,7 +42,6 @@ const AdminPanel: React.FC = () => {
           ))}
         </div>
       </div>
-      <Prueba />
       <Patrocinadores />
       <Footer />
     </>
