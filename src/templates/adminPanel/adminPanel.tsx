@@ -1,9 +1,8 @@
 import React from "react";
-import "../styles/adminPanel.css";
-import NavBar from "../components/navBar";
-import Footer from "../components/footer";
-import Prueba from "../components/prueba";
-import Patrocinadores from "../components/patrocinadoresOficiales/patrocinadoresOficiales";
+import "../../styles/adminPanel.css";
+import NavBar from "../../components/navBar";
+import Footer from "../../components/footer";
+import Patrocinadores from "../../components/patrocinadoresOficiales/patrocinadoresOficiales";
 
 // Importación de íconos
 import { IoMdMegaphone } from "react-icons/io";
@@ -17,10 +16,10 @@ const AdminPanel: React.FC = () => {
 
   const options = [
     { label: "Editar noticia principal", icon: <IoMdMegaphone size={24} />, path: "/admin/noticia" },
-    { label: "Crear cuenta de Entrenador", icon: <GiTeacher size={24} />, path: "/admin/crearEntrenador" },
+    { label: "Crear cuenta de Entrenador", icon: <GiTeacher size={24} />, path: "/admin/gestionUsuarios" },
     { label: "Crear cuenta de Club", icon: <FaSwimmer size={24} />, path: "/admin/crearClub" },
     { label: "Gestionar Deportistas", icon: <FaUser size={24} />, path: "/admin/ModuloNadadores" },
-    { label: "Gestionar Entrenadores", icon: <GiTeacher size={24} />, path: "/admin/ModuloEntrenadores" },
+    { label: "Gestionar Entrenadores", icon: <GiTeacher size={24} />, path: "/admin/gestionUsuarios" },
     { label: "Gestionar Clubes", icon: <FaSwimmer size={24} />, path: "/admin/ModuloClubes" },
     { label: "Gestionar Torneo", icon: <TbTournament size={24} />, path: "/admin/Torneos" },
   ];
@@ -43,7 +42,6 @@ const AdminPanel: React.FC = () => {
           ))}
         </div>
       </div>
-      <Prueba />
       <Patrocinadores />
       <Footer />
     </>
