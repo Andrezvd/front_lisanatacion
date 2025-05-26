@@ -3,6 +3,9 @@ import Home from "./templates/home";
 import AdminPanel from "./templates/adminPanel";
 import ProtectedRoute from "./router/protectedRoutes";
 import TrainersPanel from "./templates/trainersPanel"
+import CursosPanel from "./templates/cursosPanel";
+
+
 
 function App() {
   return (
@@ -19,6 +22,7 @@ function App() {
         }
       />
       <Route path="/trainersPanel" element={<TrainersPanel/>} />
+      <Route path="/CursosPanel" element={<CursosPanel/>} />
     </Routes>
   );
 }
