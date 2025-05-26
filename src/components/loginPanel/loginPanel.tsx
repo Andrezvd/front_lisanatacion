@@ -9,7 +9,7 @@ interface LoginPanelProps {
 }
 
 interface JwtPayload {
-  user_id: number;
+  id: number;
   nombre: string;
   email: string;
   rol: string;
@@ -35,7 +35,7 @@ const LoginPanel: React.FC<LoginPanelProps> = ({ isOpen, onClose }) => {
 
       // Guardar token y datos de usuario en localStorage
       localStorage.setItem("access_token", token);
-      localStorage.setItem("user_id", usuario.user_id.toString());
+      localStorage.setItem("user_id", usuario.id.toString());
       localStorage.setItem("userName", usuario.nombre);
       localStorage.setItem("userRole", usuario.rol);
 

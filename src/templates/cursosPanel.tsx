@@ -95,7 +95,9 @@ const CursosPanel: React.FC = () => {
       precioPrueba: 10000,
       descripcion: "Curso de perfeccionamiento de estilos de natación."
     }
-  ];
+
+const CursosPanel: React.FC = () => {
+
 
   return (
     <>

@@ -16,6 +16,12 @@ const NavBar: React.FC = () => {
   const [loginOpen, setLoginOpen] = useState(false);
   const userRole = localStorage.getItem("userRole");
   const userName = localStorage.getItem("userName");
+  const handleClick = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userRole");
+    window.location.href = "/";
+  };
+
 
   return (
     <div className="contenedor-navbar">
@@ -95,9 +101,9 @@ const NavBar: React.FC = () => {
                   <ul className="dropdown-content">
                     <div className="opcionTransparente"></div>
                     <div className="fondoOpcionesDesplegables opcionesDesplegadas">
-                      <li><Link to="/admin">Gestionar Nadadores</Link></li>
+                      <li><Link to="/admin">Modulo de Administración</Link></li>
                       <li><Link to="/panelTorneos">Panel de torneos</Link></li>
-                      <li><Link to="/logout">Log out</Link></li>
+                      <li onClick={handleClick}><Link to="/logout">Log out</Link></li>
                     </div>
                   </ul>
                 </div>
