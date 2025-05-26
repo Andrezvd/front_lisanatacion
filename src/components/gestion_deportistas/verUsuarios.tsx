@@ -6,9 +6,9 @@ const VerUsuarios = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    console.log("URL de la API:", import.meta.env.VITE_API_URL);  // 👈 Aquí
+    console.log("URL de la API:", import.meta.env.VITE_API_URL); 
 
-    api.get("/usuarios/")  // 👈 Nota: no pongas la URL completa aquí si ya usas baseURL
+    api.get("/usuarios/")  
       .then(response => setUsuarios(response.data))
       .catch(error => {
         console.error("Error:", error);

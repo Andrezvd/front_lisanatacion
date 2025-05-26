@@ -1,25 +1,81 @@
 import "../../styles/ultimaNoticia.css";
-import videoUltimaNoticia from "../../assets/videos/ultimaNoticia.mp4"; // <-- así se importa bien
+import videoUltimaNoticia from "../../assets/videos/ultimaNoticia.mp4";
+import imagenNoticia from "../../assets/images/nadador.jpg"
+
+
+const noticias = [
+  {
+    id: 1,
+    imagen: imagenNoticia,
+    titulo: "Evento Nacional",
+    descripcion: "Campeonato con récord de asistencia.",
+  },
+  {
+    id: 2,
+    imagen: imagenNoticia,
+    titulo: "Nuevo Récord",
+    descripcion: "Récord en 100m libres.",
+  },
+  {
+    id: 3,
+    imagen: imagenNoticia,
+    titulo: "Sesiones Abiertas",
+    descripcion: "Entrenamientos juveniles disponibles.",
+  },
+  {
+    id: 4,
+    imagen: imagenNoticia,
+    titulo: "Nuevo Récord",
+    descripcion: "Récord en 100m libres.",
+  },
+  {
+    id: 5,
+    imagen: imagenNoticia,
+    titulo: "Sesiones Abiertas",
+    descripcion: "Entrenamientos juveniles disponibles.",
+  },
+  {
+    id: 6,
+    imagen: imagenNoticia,
+    titulo: "Nuevo Récord",
+    descripcion: "Récord en 100m libres.",
+  },
+  {
+    id: 7,
+    imagen: imagenNoticia,
+    titulo: "Sesiones Abiertas",
+    descripcion: "Entrenamientos juveniles disponibles.",
+  },
+];
 
 
 
 const UltimaNoticia = () => {
   return (
     <div className="contenedorUltimaNoticia">
-      <div className="videoUltimaNoticia">
-        {/* Aquí iría tu video (puede ser un iframe, un video tag o una imagen temporal) */}
-        <video src={videoUltimaNoticia} controls />
+      <div className="videoUltimaNoticia overlay">
+        <video src={videoUltimaNoticia} autoPlay muted loop playsInline />
+        <div className="videoCaption">
+          <h3 className="videoTitulo">Red richard gana en 100M masculino</h3>
+          <p className="videoDescripcion">
+            Tras una larga jornada Red richard se lleva el campeonato sirenin frente a su rival
+          </p>
+        </div>
       </div>
+
       <div className="textoUltimaNoticia">
-        <h2 className="tituloNoticia">Vea la victoria de Red Richard en 100 metros</h2>
-        <p className="textoNoticia">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-          tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-          tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <h2 className="tituloNoticia">Últimas Noticias</h2>
+        <div className="listaNoticias">
+          {noticias.slice(0, 5).map((noticia) => (
+            <div key={noticia.id} className="noticiaItem">
+              <img src={noticia.imagen} alt={noticia.titulo} />
+              <div>
+                <h3>{noticia.titulo}</h3>
+                <p>{noticia.descripcion}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

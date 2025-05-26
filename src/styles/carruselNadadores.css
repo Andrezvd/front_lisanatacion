@@ -1,0 +1,80 @@
+.carousel-container {
+    display: flex;
+    height: 28vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Esto asegura que no haya un scroll extra */
+    background: linear-gradient(90deg, #02400d 0%, #02400d 100%); /* Fondo degradado */
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 15px;
+    width: 90%;
+    padding: 10px;
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Desactiva el scroll horizontal */
+  }
+  
+  .carousel-item {
+    flex: 0 0 auto;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .carousel-image-container {
+    width: 120px; /* Tamaño contenedor de imagen ajustado */
+    height: 120px; /* Tamaño contenedor de imagen ajustado */
+    overflow: hidden; /* Recorta las imágenes que sobresalgan */
+    border-radius: 50%; /* Asegura que las imágenes sean redondas */
+    margin: 0 auto; /* Centra la imagen en su contenedor */
+    border: 4px solid #d6ee5f;
+
+  }
+  
+  .carousel-image {
+    width: 100%; /* Hace que la imagen ocupe todo el espacio del contenedor */
+    height: 100%; /* Hace que la imagen ocupe todo el espacio del contenedor */
+    object-fit: cover; /* Hace que la imagen se recorte para ajustarse al contenedor */
+  }
+  
+  .carousel-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: aliceblue;
+  }
+  
+  /* Estilos para las flechas */
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .carousel-arrow.left {
+    left: 20px;
+  }
+  
+  .carousel-arrow.right {
+    right: 20px;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .carousel-image-container {
+      width: 90px;
+      height: 90px;
+    }
+  
+    .carousel-text {
+      font-size: 12px;
+    }
+  }
+  

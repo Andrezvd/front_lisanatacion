@@ -1,0 +1,102 @@
+.contenedor-mejores-momentos {
+    padding: 2rem;
+    background-color: #f3f3f3;
+    overflow: hidden;
+  }
+  
+  .header-momentos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    
+  }
+  
+  .header-momentos h2 {
+    font-size: 2rem;
+    margin: 0px 0px 0px 15px;  
+  }
+  
+  .ver-galeria {
+    display: flex;
+    align-items: center;
+    color: #007bff;
+    cursor: pointer;
+    font-weight: BOLD;
+    transition: color 0.3s;
+    margin: 0px 15px 0px 0px;  
+  }
+  
+  .ver-galeria:hover {
+    color: #0056b3;
+  }
+  
+  .ver-galeria svg {
+    margin-left: 0.5rem;
+  }
+  
+  .momentos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 10px;
+    margin: 0px 15px 0px 15px;
+  }
+  
+  .momento-card {
+    cursor: pointer;
+    position: relative;
+    max-width: 13.6%;
+    height: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .momento-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: white;
+    padding: 0.5rem;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 600;
+    line-height: 17.6px;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    z-index: 4;
+    -webkit-box-orient: vertical;
+    width: 100%;
+    display: -webkit-box;
+    overflow: hidden;
+  }
+  
+  /* Responsivo horizontal (pantallas pequeñas) */
+  @media (max-width: 600px) {
+    .momento-card {
+      width: 40%;
+      height: 200px;
+    }
+  
+    .header-momentos h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Responsivo vertical (pantallas bajas) */
+  @media (max-height: 500px) {
+    .contenedor-mejores-momentos {
+      overflow-y: auto;
+      max-height: 100vh;
+    }
+  }
+  

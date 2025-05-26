@@ -10,11 +10,18 @@ import { IoMdMegaphone } from "react-icons/io";
 import { GiTeacher } from "react-icons/gi";
 import { GrGallery } from "react-icons/gr";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { FaUser } from "react-icons/fa6";
 
 const NavBar: React.FC = () => {
   const [loginOpen, setLoginOpen] = useState(false);
   const userRole = localStorage.getItem("userRole");
   const userName = localStorage.getItem("userName");
+  const handleClick = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userRole");
+    window.location.href = "/";
+  };
+
 
   return (
     <div className="contenedor-navbar">
@@ -84,20 +91,19 @@ const NavBar: React.FC = () => {
           <li className="carrerasOpcion"><Link to="/carreras">Pruebas <span className="icono_drowdown carrerasOpcion"><FaSwimmer /></span></Link></li>
           <li className="torneosOpcion"><Link to="/about">Torneos <span className="icono_drowdown"><TbTournament /></span></Link></li>
           <li className="convocatoriaOpcion"><Link to="/services">Convocatorias <span className="icono_drowdown"><IoMdMegaphone /></span></Link></li>
-          <li className="cursosOpcion"><Link to="/services">Cursos <span className="icono_drowdown"><GiTeacher /></span></Link></li>
-          <li className="galeriaOpcion"><Link to="/galeria">Galería <span className="icono_drowdown"><GrGallery /></span></Link></li>
 
           {userRole === "admin" ? (
             <li className="dropdown">
                 <div className="dropdown-wrapper">
                   <Link to="/buscar">
-                  {userName} <span className="icono_drowdown"><GiHamburgerMenu /></span>
+                  {userName} <span className="icono_drowdown"><FaUser /></span>
                   </Link>
                   <ul className="dropdown-content">
                     <div className="opcionTransparente"></div>
                     <div className="fondoOpcionesDesplegables opcionesDesplegadas">
-                      <li><Link to="/admin">Usuarios y Noticias</Link></li>
+                      <li><Link to="/admin">Modulo de Administración</Link></li>
                       <li><Link to="/panelTorneos">Panel de torneos</Link></li>
+                      <li onClick={handleClick}><Link to="/logout">Log out</Link></li>
                     </div>
                   </ul>
                 </div>
@@ -109,7 +115,10 @@ const NavBar: React.FC = () => {
               </span>
             </li>
           )}
+          <li className="cursosOpcion"><Link to="/services">Cursos <span className="icono_drowdown"><GiTeacher /></span></Link></li>
+          <li className="galeriaOpcion"><Link to="/galeria">Galería <span className="icono_drowdown"><GrGallery /></span></Link></li>
         </ul>
+
       </nav>
       <LoginPanel isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
     </div>

@@ -1,13 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
+import { jwtDecode } from "jwt-decode";
 import "../../styles/loginPanel.css";
+import manejarLogin from "./manejarLogin";
 
 interface LoginPanelProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+interface JwtPayload {
+  id: number;
+  nombre: string;
+  email: string;
+  rol: string;
+
+}
+
 const LoginPanel: React.FC<LoginPanelProps> = ({ isOpen, onClose }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [mensaje, setMensaje] = useState<string | null>(null);
+
   if (!isOpen) return null;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setMensaje(null);
+
+    try {
+      const token = await manejarLogin(email, password);
+
+      // Decodificar el JWT para obtener datos del usuario
+      const usuario = jwtDecode<JwtPayload>(token);
+
+      // Guardar token y datos de usuario en localStorage
+      localStorage.setItem("access_token", token);
+      localStorage.setItem("user_id", usuario.id.toString());
+      localStorage.setItem("userName", usuario.nombre);
+      localStorage.setItem("userRole", usuario.rol);
+
+      setMensaje("✅ Sesión iniciada correctamente.");
+      onClose(); // cerrar modal después de login exitoso
+    } catch (error: any) {
+      setMensaje("❌ Error al iniciar sesión: " + error.message);
+    }
+  };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -31,15 +68,29 @@ const LoginPanel: React.FC<LoginPanelProps> = ({ isOpen, onClose }) => {
 
         <div className="modal-right">
           <h2>Iniciar Sesión</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <label htmlFor="email">Correo Electrónico:</label>
-            <input type="email" id="email" required />
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
 
             <label htmlFor="password">Contraseña:</label>
-            <input type="password" id="password" required />
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
 
             <button type="submit">Ingresar</button>
             <button type="button" className="forgot-password">¿Olvidaste tu contraseña?</button>
+
+            {mensaje && <p className="mensaje-login">{mensaje}</p>}
           </form>
         </div>
 
