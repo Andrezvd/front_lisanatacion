@@ -1,8 +1,6 @@
-import React, { useState } from "react";
 import "../styles/cursosPanel.css";
 import NavBar from "../components/navBar";
 import Footer from "../components/footer";
-import CrearCursoModal from "../components/crearCursoModal/crearCursoModal"; // Modal de creación
 
 
 
@@ -20,7 +18,6 @@ interface Curso {
 }
 
 const CursosPanel: React.FC = () => {
-  const [panelOpen, setPanelOpen] = useState(false);
 
   const cursos: Curso[] = [
     {
@@ -94,9 +91,8 @@ const CursosPanel: React.FC = () => {
       precioMes: 70000,
       precioPrueba: 10000,
       descripcion: "Curso de perfeccionamiento de estilos de natación."
-    }
-
-const CursosPanel: React.FC = () => {
+    },
+  ];
 
 
   return (

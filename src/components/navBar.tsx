@@ -92,22 +92,38 @@ const NavBar: React.FC = () => {
           <li className="torneosOpcion"><Link to="/about">Torneos <span className="icono_drowdown"><TbTournament /></span></Link></li>
           <li className="convocatoriaOpcion"><Link to="/services">Convocatorias <span className="icono_drowdown"><IoMdMegaphone /></span></Link></li>
 
-          {userRole === "admin" ? (
+          {userRole === "admin" || userRole === "entrenador" || userRole === "club" ? (
             <li className="dropdown">
-                <div className="dropdown-wrapper">
-                  <Link to="/buscar">
+              <div className="dropdown-wrapper">
+                <Link to="#">
                   {userName} <span className="icono_drowdown"><FaUser /></span>
-                  </Link>
-                  <ul className="dropdown-content">
-                    <div className="opcionTransparente"></div>
-                    <div className="fondoOpcionesDesplegables opcionesDesplegadas">
-                      <li><Link to="/admin">Modulo de Administración</Link></li>
-                      <li><Link to="/panelTorneos">Panel de torneos</Link></li>
-                      <li onClick={handleClick}><Link to="/logout">Log out</Link></li>
-                    </div>
-                  </ul>
-                </div>
-              </li>
+                </Link>
+                <ul className="dropdown-content">
+                  <div className="opcionTransparente"></div>
+                  <div className="fondoOpcionesDesplegables opcionesDesplegadas">
+                    {userRole === "admin" && (
+                      <>
+                        <li><Link to="/admin">Módulo de Administración</Link></li>
+                        <li><Link to="/panelTorneos">Panel de torneos</Link></li>
+                      </>
+                    )}
+                    {userRole === "entrenador" && (
+                      <>
+                        <li><Link to="/panelEntrenador">Panel de Entrenador</Link></li>
+                        <li><Link to="/panelTorneos">Torneos</Link></li>
+                      </>
+                    )}
+                    {userRole === "club" && (
+                      <>
+                        <li><Link to="/panelClub">Panel de Club</Link></li>
+                        <li><Link to="/panelTorneos">Torneos</Link></li>
+                      </>
+                    )}
+                    <li onClick={handleClick}><Link to="/logout">Log out</Link></li>
+                  </div>
+                </ul>
+              </div>
+            </li>
           ) : (
             <li className="dropdown">
               <span className="dropbtn" onClick={() => setLoginOpen(true)}>
@@ -115,6 +131,7 @@ const NavBar: React.FC = () => {
               </span>
             </li>
           )}
+
           <li className="cursosOpcion"><Link to="/CursosPanel">Cursos <span className="icono_drowdown"><GiTeacher /></span></Link></li>
           <li className="galeriaOpcion"><Link to="/galeria">Galería <span className="icono_drowdown"><GrGallery /></span></Link></li>
         </ul>

@@ -1,0 +1,36 @@
+/* GestionUsuarios.css */
+
+.gestion-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+input {
+  display: block;
+  margin: 10px 0;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+button:hover {
+  background-color: #1f6391;
+}
+
+hr {
+  margin: 30px 0;
+  border: none;
+  border-top: 1px solid #bdc3c7;
+}
+
+
+
+
+
+

@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./templates/home";
-import AdminPanel from "./templates/adminPanel";
+import AdminPanel from "./templates/adminPanel/adminPanel";
 import ProtectedRoute from "./router/protectedRoutes";
 import TrainersPanel from "./templates/trainersPanel"
 import CursosPanel from "./templates/cursosPanel";
 import EditarNoticia from "./templates/editarNoticia";
+import GestionUsuarios from "./templates/adminPanel/gestionEntrenadores";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/trainersPanel" element={<TrainersPanel/>} />
       <Route path="/CursosPanel" element={<CursosPanel/>} />
       <Route path="/admin/noticia" element={<EditarNoticia />} />
+      <Route path="/admin/gestionUsuarios" element={<GestionUsuarios />} />
     </Routes>
   );
 }
